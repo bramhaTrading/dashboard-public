@@ -138,9 +138,9 @@ export default async function Page() {
           <DailyReview reviews={reviews} regime={meta?.regime ?? "unknown"} />
         </section>
 
-        {/* ROW: Allocation + Sector */}
-        <section className="grid lg:grid-cols-[1.55fr_1fr] gap-4 mb-4 items-start">
-          <div className="surface surface-hover p-6">
+        {/* ROW: Allocation + Market climate */}
+        <section className="grid lg:grid-cols-[1.55fr_1fr] gap-4 mb-4">
+          <div className="surface surface-hover p-6 h-full flex flex-col">
             <div className="flex items-center justify-between mb-5">
               <div>
                 <h3 className="text-sm font-semibold text-ink">Allocation by sector</h3>
