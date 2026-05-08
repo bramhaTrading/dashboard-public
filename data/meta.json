@@ -1,0 +1,13 @@
+{
+  "last_updated": "2026-05-08T00:00:00Z",
+  "starting_capital": 100000,
+  "current_equity": 100000,
+  "total_return_pct": 0,
+  "spy_return_pct": 0,
+  "alpha_pct": 0,
+  "sharpe": null,
+  "max_drawdown_pct": 0,
+  "trade_count": 0,
+  "win_rate": null,
+  "regime": "unknown"
+}
