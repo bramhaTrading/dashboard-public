@@ -147,8 +147,9 @@ export function RegimeTimeshare({ data }: { data: RegimeTimeshareData }) {
         </div>
       </div>
 
-      {/* 2-col paired legend (3 rows) */}
-      <div className="px-6 pb-5">
+      {/* 2-col paired legend — centred vertically in remaining space so the
+          rows aren't crammed at the top and the footer isn't isolated below. */}
+      <div className="px-6 pb-6 flex-1 flex flex-col justify-center">
         <div className="grid grid-cols-2 gap-x-8">
           {PAIRS.map(([a, b], i) => (
             <div key={i} className="contents">
@@ -172,7 +173,7 @@ export function RegimeTimeshare({ data }: { data: RegimeTimeshareData }) {
 function LegendRow({ s, divider }: { s: RegimeShare | undefined; divider?: boolean }) {
   if (!s) return <div />;
   return (
-    <div className={`flex items-center gap-2.5 py-2 ${divider ? "border-t border-border" : ""}`}>
+    <div className={`flex items-center gap-2.5 py-3 ${divider ? "border-t border-border" : ""}`}>
       <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: colourFor(s.state) }} />
       <span className="text-[13px] text-ink flex-1 truncate">{labelFor(s.state)}</span>
       <span className="font-mono text-[12px] font-semibold text-ink tabular-nums">{fmtPct(s.pct)}</span>
