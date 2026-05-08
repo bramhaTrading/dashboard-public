@@ -8,37 +8,62 @@ import {
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
-  Legend,
 } from "recharts";
 import type { EquityPoint } from "@/lib/types";
 
 function fmt$k(v: number) {
   return `$${(v / 1000).toFixed(0)}k`;
 }
+function fmt$(n: number) {
+  return `$${n.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+}
+
+interface TipProps {
+  active?: boolean;
+  payload?: Array<{ payload: EquityPoint; value: number; name: string }>;
+}
+
+function CustomTip({ active, payload }: TipProps) {
+  if (!active || !payload || !payload.length) return null;
+  const p   = payload[0].payload;
+  const eq  = p.equity;
+  const spy = p.spy_equiv;
+  const diff = eq - spy;
+  return (
+    <div className="font-mono bg-white border border-gold-mid rounded-lg px-3 py-2 shadow-md">
+      <div className="text-[9px] text-muted tracking-[0.12em] uppercase mb-1">{p.date}</div>
+      <div className="text-[13px] text-ink font-semibold tabular-nums">{fmt$(eq)}</div>
+      <div className={`text-[10px] tabular-nums mt-0.5 ${diff >= 0 ? "text-up" : "text-down"}`}>
+        {diff >= 0 ? "+" : ""}{fmt$(diff)} vs SPY
+      </div>
+    </div>
+  );
+}
 
 export function EquityCurve({ data }: { data: EquityPoint[] }) {
   if (!data.length) {
     return (
-      <div className="h-[280px] grid place-items-center text-muted text-sm">
-        No equity data yet. The exporter has not run.
+      <div className="h-[300px] grid place-items-center text-muted text-sm">
+        No equity data yet.
       </div>
     );
   }
 
   return (
     <ResponsiveContainer width="100%" height={300}>
-      <ComposedChart data={data} margin={{ top: 16, right: 24, left: 8, bottom: 8 }}>
+      <ComposedChart data={data} margin={{ top: 16, right: 24, left: 0, bottom: 8 }}>
         <defs>
           <linearGradient id="aryaArea" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#a8862c" stopOpacity={0.22} />
+            <stop offset="0%"   stopColor="#a8862c" stopOpacity={0.28} />
+            <stop offset="60%"  stopColor="#c9a84c" stopOpacity={0.10} />
             <stop offset="100%" stopColor="#a8862c" stopOpacity={0} />
           </linearGradient>
           <linearGradient id="aryaStroke" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#a8862c" />
+            <stop offset="0%"   stopColor="#a8862c" />
             <stop offset="100%" stopColor="#c9a84c" />
           </linearGradient>
         </defs>
-        <CartesianGrid stroke="rgba(20,18,12,0.05)" strokeDasharray="0" vertical={false} />
+        <CartesianGrid stroke="rgba(20,18,12,0.04)" vertical={false} />
         <XAxis
           dataKey="date"
           stroke="#8a8780"
@@ -54,46 +79,29 @@ export function EquityCurve({ data }: { data: EquityPoint[] }) {
           tickLine={false}
           axisLine={false}
           tickFormatter={fmt$k}
-          domain={["dataMin - 500", "dataMax + 500"]}
-          width={48}
+          domain={["auto", "auto"]}
+          width={56}
         />
-        <Tooltip
-          contentStyle={{
-            background: "#fff",
-            border: "1px solid rgba(168,134,44,0.32)",
-            borderRadius: 8,
-            color: "#1c1a14",
-            fontFamily: "Geist Mono, monospace",
-            fontSize: 12,
-            padding: "8px 12px",
-          }}
-          formatter={(value: number, name: string) => [
-            `$${value.toLocaleString(undefined, { maximumFractionDigits: 0 })}`,
-            name === "equity" ? "bramhaTrading" : "SPY",
-          ]}
-          labelStyle={{ color: "#8a8780", fontSize: 10, letterSpacing: "0.08em" }}
-        />
+        <Tooltip content={<CustomTip />} cursor={{ stroke: "rgba(168,134,44,0.42)", strokeDasharray: "3 3" }} />
         <Area
           type="monotone"
           dataKey="equity"
           stroke="url(#aryaStroke)"
-          strokeWidth={2}
+          strokeWidth={2.5}
           fill="url(#aryaArea)"
           dot={false}
-          activeDot={{ r: 4, fill: "#a8862c" }}
+          activeDot={{ r: 4, fill: "#a8862c", strokeWidth: 0 }}
+          isAnimationActive={false}
         />
         <Line
           type="monotone"
           dataKey="spy_equiv"
-          stroke="#5a574f"
-          strokeWidth={1.4}
-          strokeDasharray="4 4"
+          stroke="rgba(90,87,79,0.35)"
+          strokeWidth={1}
+          strokeDasharray="3 4"
           dot={false}
-          activeDot={{ r: 3, fill: "#5a574f" }}
-        />
-        <Legend
-          wrapperStyle={{ fontSize: 11, color: "#5a574f", paddingTop: 8 }}
-          formatter={(v: string) => (v === "equity" ? "bramhaTrading" : "SPY")}
+          activeDot={false}
+          isAnimationActive={false}
         />
       </ComposedChart>
     </ResponsiveContainer>

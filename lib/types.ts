@@ -33,6 +33,51 @@ export interface Trade {
   regime:       string;
 }
 
+export interface SectorAllocation {
+  sector:    string;
+  value_usd: number;
+  pct:       number;          // 0..1
+}
+
+export interface CalibrationBucket {
+  label:           string;
+  count:           number;
+  avg_outcome_pct: number | null;
+}
+
+export interface Calibration {
+  buckets:              CalibrationBucket[];
+  resolved_count:       number;
+  directional_accuracy: number | null;   // 0..1
+  median_outcome_pct:   number | null;
+}
+
+export interface RegimeShare {
+  state: string;
+  days:  number;
+  pct:   number;
+}
+
+export interface RegimeTimeshareData {
+  states:                RegimeShare[];   // ordered calm → stress
+  total_days:            number;
+  current_state:         string | null;
+  current_state_since:   string | null;   // YYYY-MM-DD
+  days_in_state:         number;
+  avg_switches_per_year: number | null;
+}
+
+export interface AllocationStats {
+  top_sector:      string;
+  top_sector_pct:  number;
+  top3_share:      number;
+  sectors_held:    number;
+  gics_total:      number;
+  hhi:             number;
+  top_position:    { symbol: string; pct_of_book: number } | null;
+  missing_sectors: string[];
+}
+
 export interface Verdict {
   id:                       string;
   ticker:                   string;

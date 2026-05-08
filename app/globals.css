@@ -17,6 +17,9 @@
   --mid:         #5a574f;
   --up:          #15803d;
   --down:        #b91c1c;
+  --amber:       #d97706;
+  --sky:         #2563eb;
+  --violet:      #7c3aed;
 }
 
 html, body {
@@ -24,14 +27,63 @@ html, body {
   color: var(--ink);
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* ── Ambient background — gives the glass cards something to blur ── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 50vh at 12% -10%, rgba(201, 168, 76, 0.18), transparent 60%),
+    radial-gradient(50vw 40vh at 90% 10%,  rgba(201, 168, 76, 0.10), transparent 60%),
+    radial-gradient(70vw 60vh at 50% 110%, rgba(168, 134, 44, 0.08), transparent 65%);
+}
+body > * { position: relative; z-index: 1; }
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(20, 18, 12, 0.12); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(20, 18, 12, 0.22); }
+::-webkit-scrollbar-thumb { background: rgba(20, 18, 12, 0.14); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(20, 18, 12, 0.24); }
 
 .font-mono { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; }
+
+/* ── Liquid glass surface (Apple style) ────────────────── */
+.surface {
+  background: linear-gradient(180deg,
+                rgba(255, 255, 255, 0.78) 0%,
+                rgba(253, 252, 250, 0.60) 100%);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 0 0 1px rgba(20, 18, 12, 0.04),
+    0 1px 2px rgba(20, 18, 12, 0.04),
+    0 18px 50px -16px rgba(20, 18, 12, 0.14);
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.3, 1),
+              box-shadow 220ms;
+}
+.surface-hover:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 0 0 1px rgba(20, 18, 12, 0.05),
+    0 2px 4px rgba(20, 18, 12, 0.05),
+    0 24px 64px -16px rgba(20, 18, 12, 0.18);
+}
+
+/* Sticky topbar gets its own glass treatment */
+.glass-bar {
+  background: linear-gradient(180deg, rgba(243, 242, 238, 0.78), rgba(243, 242, 238, 0.60));
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(20, 18, 12, 0.06);
+}
 
 @keyframes pulse-gold {
   0%   { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }

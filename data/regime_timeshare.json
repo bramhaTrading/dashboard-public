@@ -1,0 +1,39 @@
+{
+  "states": [
+    {
+      "state": "low_vol",
+      "days": 1011,
+      "pct": 0.3287
+    },
+    {
+      "state": "mid_low_vol",
+      "days": 352,
+      "pct": 0.1144
+    },
+    {
+      "state": "mid_vol",
+      "days": 754,
+      "pct": 0.2451
+    },
+    {
+      "state": "mid_high_vol",
+      "days": 214,
+      "pct": 0.0696
+    },
+    {
+      "state": "high_vol",
+      "days": 663,
+      "pct": 0.2155
+    },
+    {
+      "state": "panic_vol",
+      "days": 82,
+      "pct": 0.0267
+    }
+  ],
+  "total_days": 3076,
+  "current_state": "mid_vol",
+  "current_state_since": "2026-04-29",
+  "days_in_state": 2,
+  "avg_switches_per_year": 17.4
+}

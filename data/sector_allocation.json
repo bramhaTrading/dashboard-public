@@ -1,0 +1,37 @@
+[
+  {
+    "sector": "Consumer Defensive",
+    "value_usd": 106994.0,
+    "pct": 0.5096
+  },
+  {
+    "sector": "Technology",
+    "value_usd": 28449.0,
+    "pct": 0.1355
+  },
+  {
+    "sector": "Financial Services",
+    "value_usd": 26054.0,
+    "pct": 0.1241
+  },
+  {
+    "sector": "Industrials",
+    "value_usd": 21517.0,
+    "pct": 0.1025
+  },
+  {
+    "sector": "Utilities",
+    "value_usd": 11252.0,
+    "pct": 0.0536
+  },
+  {
+    "sector": "Energy",
+    "value_usd": 10489.0,
+    "pct": 0.05
+  },
+  {
+    "sector": "Basic Materials",
+    "value_usd": 5189.0,
+    "pct": 0.0247
+  }
+]

@@ -1,9 +1,17 @@
 import { promises as fs } from "fs";
 import path from "path";
-import type { Meta, EquityPoint, Trade, Verdict } from "@/lib/types";
+import type {
+  Meta, EquityPoint, Trade, Verdict,
+  SectorAllocation as Alloc, AllocationStats,
+  Calibration, RegimeTimeshareData,
+} from "@/lib/types";
 import { EquityCurve } from "./components/EquityCurve";
 import { TradesTable } from "./components/TradesTable";
 import { ReviewsTable } from "./components/ReviewsTable";
+import { SectorAllocation } from "./components/SectorAllocation";
+import { DailyReview } from "./components/DailyReview";
+import { ModelCalibration } from "./components/ModelCalibration";
+import { RegimeTimeshare } from "./components/RegimeTimeshare";
 
 async function loadJson<T>(rel: string, fallback: T): Promise<T> {
   try {
@@ -33,27 +41,32 @@ export default async function Page() {
   const equity   = await loadJson<EquityPoint[]>("equity_curve.json", []);
   const trades   = await loadJson<Trade[]>("trades.json", []);
   const reviews  = await loadJson<Verdict[]>("verdicts.json", []);
+  const alloc    = await loadJson<Alloc[]>("sector_allocation.json", []);
+  const stats    = await loadJson<AllocationStats | null>("allocation_stats.json", null);
+  const calib    = await loadJson<Calibration>("calibration.json", {
+    buckets: [], resolved_count: 0, directional_accuracy: null, median_outcome_pct: null,
+  });
+  const regimes  = await loadJson<RegimeTimeshareData>("regime_timeshare.json", {
+    states: [], total_days: 0,
+    current_state: null, current_state_since: null, days_in_state: 0,
+    avg_switches_per_year: null,
+  });
 
   const equityVal = meta?.current_equity ?? 100_000;
   const eqParts   = splitDollars(equityVal);
 
-  // Pull most-recent reviews with non-zero score for the hero review card
-  const flagged = reviews.filter((r) => Math.abs(r.research_score) >= 1).slice(0, 3);
-
   return (
     <div className="min-h-screen">
-      {/* ── TOP BAR ────────────────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-bg/80 border-b border-border">
+      {/* TOP BAR */}
+      <header className="sticky top-0 z-50 glass-bar">
         <div className="max-w-7xl mx-auto px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="w-6 h-6 rounded-full border border-gold-mid grid place-items-center">
               <span className="w-2 h-2 rounded-full bg-gold" />
             </span>
-            <span className="font-mono text-xs font-bold tracking-[0.18em] text-gold">
-              BRAHMA
-            </span>
+            <span className="font-mono text-xs font-bold tracking-[0.18em] text-gold">BRAHMA</span>
             <span className="text-mid mx-2 opacity-50">/</span>
-            <span className="text-xs text-mid">Paper portfolio &middot; live transparency</span>
+            <span className="text-xs text-mid">Paper portfolio · live transparency</span>
           </div>
           {meta && (
             <div className="font-mono text-[10px] text-muted tracking-wider hidden md:flex items-center gap-3">
@@ -66,7 +79,7 @@ export default async function Page() {
 
       <main className="max-w-7xl mx-auto px-8 py-10">
 
-        {/* ── HERO ─────────────────────────────────────────────────── */}
+        {/* HERO */}
         <section className="flex items-end justify-between flex-wrap gap-8 mb-10">
           <div>
             <div className="font-mono text-[10px] font-semibold tracking-[0.18em] text-gold uppercase mb-3 flex items-center gap-3">
@@ -76,48 +89,28 @@ export default async function Page() {
             <div className="text-sm text-muted mb-2">Total equity</div>
             <div className="font-mono font-semibold tracking-[-2.5px] leading-none flex items-baseline gap-3">
               <span className="text-3xl text-muted font-medium">$</span>
-              <span className="text-6xl text-ink">{eqParts.whole}</span>
-              <span className="text-2xl text-muted font-medium">.{eqParts.cents}</span>
+              <span className="text-6xl text-ink tabular-nums">{eqParts.whole}</span>
+              <span className="text-2xl text-muted font-medium tabular-nums">.{eqParts.cents}</span>
             </div>
           </div>
 
           {meta && (
-            <div className="flex border border-border rounded-2xl bg-bg2 overflow-hidden">
-              <Stat
-                label="Return"
-                value={fmtPct(meta.total_return_pct)}
-                sub="cumulative"
-                tone={meta.total_return_pct >= 0 ? "up" : "down"}
-              />
-              <Stat
-                label="vs SPY α"
-                value={fmtPct(meta.alpha_pct)}
-                sub={`SPY ${fmtPct(meta.spy_return_pct, true)}`}
-                tone={meta.alpha_pct >= 0 ? "up" : "down"}
-                divider
-              />
-              <Stat
-                label="Sharpe"
-                value={meta.sharpe?.toFixed(2) ?? "—"}
-                sub="annualised"
-                divider
-              />
-              <Stat
-                label="Max DD"
-                value={fmtPct(meta.max_drawdown_pct, false)}
-                sub={`${meta.trade_count} trades`}
-                tone="down"
-                divider
-              />
+            <div className="surface flex overflow-hidden">
+              <Stat label="Return" value={fmtPct(meta.total_return_pct)} sub="cumulative"
+                tone={meta.total_return_pct >= 0 ? "up" : "down"} />
+              <Stat label="vs SPY α" value={fmtPct(meta.alpha_pct)} sub={`SPY ${fmtPct(meta.spy_return_pct, true)}`}
+                tone={meta.alpha_pct >= 0 ? "up" : "down"} divider />
+              <Stat label="Sharpe" value={meta.sharpe?.toFixed(2) ?? "—"} sub="annualised" divider />
+              <Stat label="Max DD" value={fmtPct(meta.max_drawdown_pct, false)} sub={`${meta.trade_count} trades`}
+                tone="down" divider />
             </div>
           )}
         </section>
 
-        {/* ── ROW: chart + review highlight ─────────────────────────── */}
+        {/* ROW: chart + daily review */}
         <section className="grid lg:grid-cols-[1.55fr_1fr] gap-4 mb-4">
 
-          {/* Chart card */}
-          <div className="bg-bg2 border border-border rounded-card overflow-hidden">
+          <div className="surface surface-hover overflow-hidden">
             <div className="flex items-center justify-between px-6 py-4 border-b border-border">
               <div>
                 <h3 className="text-sm font-semibold text-ink">Performance</h3>
@@ -127,14 +120,11 @@ export default async function Page() {
               </div>
               <div className="flex gap-1 p-1 bg-bg3 border border-border rounded-lg">
                 {["1W", "1M", "3M", "YTD", "ALL"].map((tf) => (
-                  <span
-                    key={tf}
-                    className={
-                      tf === "ALL"
-                        ? "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-gold bg-bg2 rounded-md ring-1 ring-gold-mid"
-                        : "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-muted"
-                    }
-                  >
+                  <span key={tf} className={
+                    tf === "ALL"
+                      ? "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-gold bg-bg2 rounded-md ring-1 ring-gold-mid"
+                      : "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-muted"
+                  }>
                     {tf}
                   </span>
                 ))}
@@ -145,99 +135,37 @@ export default async function Page() {
             </div>
           </div>
 
-          {/* Daily Review */}
-          <div className="bg-bg2 border border-border rounded-card p-6 relative overflow-hidden">
-            <div
-              className="absolute left-0 top-6 bottom-6 w-0.5 opacity-50"
-              style={{
-                background:
-                  "linear-gradient(180deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent)",
-              }}
-            />
-            <div className="flex items-center gap-3 mb-4">
-              <span className="w-2 h-2 rounded-full bg-gold pulse-gold" />
-              <span className="font-mono text-[10px] font-semibold tracking-[0.18em] text-gold uppercase">
-                Daily Review
-              </span>
-              {meta && (
-                <span className="ml-auto font-mono text-[9px] text-muted tracking-widest">
-                  {meta.regime.toUpperCase()}
-                </span>
-              )}
-            </div>
-
-            {flagged.length > 0 ? (
-              <>
-                <p className="text-base text-ink leading-relaxed mb-4">
-                  Latest non-neutral calls from the model:{" "}
-                  {flagged.map((r, i) => (
-                    <span key={r.id}>
-                      <span className="font-mono font-semibold text-gold">{r.ticker}</span>{" "}
-                      <span
-                        className={
-                          r.arbitrator_recommendation === "BUY"
-                            ? "font-mono font-semibold text-up"
-                            : r.arbitrator_recommendation === "SELL" || r.arbitrator_recommendation === "AVOID"
-                            ? "font-mono font-semibold text-down"
-                            : "font-mono font-semibold text-mid"
-                        }
-                      >
-                        {r.arbitrator_recommendation}
-                      </span>
-                      <span className="text-mid">
-                        {" "}({r.research_score >= 0 ? "+" : ""}{r.research_score})
-                      </span>
-                      {i < flagged.length - 1 ? ", " : "."}
-                    </span>
-                  ))}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {flagged.map((r) => (
-                    <span
-                      key={r.id}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-mono text-[10px] font-semibold tracking-wider bg-bg3 border border-border text-mid"
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{
-                          background:
-                            r.arbitrator_recommendation === "BUY"
-                              ? "var(--up)"
-                              : r.arbitrator_recommendation === "SELL"
-                              ? "var(--down)"
-                              : "var(--gold)",
-                        }}
-                      />
-                      {r.ticker}
-                    </span>
-                  ))}
-                </div>
-              </>
-            ) : (
-              <p className="text-base text-mid leading-relaxed mb-4">
-                No flagged reviews yet. Once the research pipeline ingests live news, calls with non-zero scores will surface here.
-              </p>
-            )}
-
-            <div className="flex gap-2">
-              <a
-                href="#reviews"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium border border-gold-mid bg-gold-dim text-gold hover:bg-[rgba(168,134,44,0.18)] transition-colors"
-              >
-                View all reviews →
-              </a>
-              <a
-                href="#trades"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-medium border border-border bg-bg3 text-mid hover:text-ink hover:border-border-h transition-colors"
-              >
-                Trade log
-              </a>
-            </div>
-          </div>
+          <DailyReview reviews={reviews} regime={meta?.regime ?? "unknown"} />
         </section>
 
-        {/* ── TRADES ───────────────────────────────────────────────── */}
-        <section id="trades" className="bg-bg2 border border-border rounded-card overflow-hidden mb-4">
+        {/* ROW: Allocation + Sector */}
+        <section className="grid lg:grid-cols-[1.55fr_1fr] gap-4 mb-4 items-start">
+          <div className="surface surface-hover p-6">
+            <div className="flex items-center justify-between mb-5">
+              <div>
+                <h3 className="text-sm font-semibold text-ink">Allocation by sector</h3>
+                <div className="font-mono text-[10px] text-muted tracking-wider mt-1">
+                  OPEN POSITIONS · WEIGHTED BY USD SIZE
+                </div>
+              </div>
+              <span className="font-mono text-[10px] text-muted tracking-[0.18em] flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                LIVE
+              </span>
+            </div>
+            <SectorAllocation data={alloc} stats={stats} />
+          </div>
+
+          <RegimeTimeshare data={regimes} />
+        </section>
+
+        {/* ROW: Calibration full width */}
+        <section className="mb-4">
+          <ModelCalibration data={calib} />
+        </section>
+
+        {/* TRADES */}
+        <section id="trades" className="surface overflow-hidden mb-4">
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
             <div>
               <h3 className="text-sm font-semibold text-ink">Trade log</h3>
@@ -253,8 +181,8 @@ export default async function Page() {
           <TradesTable trades={trades.slice(0, 50)} />
         </section>
 
-        {/* ── REVIEWS ──────────────────────────────────────────────── */}
-        <section id="reviews" className="bg-bg2 border border-border rounded-card overflow-hidden mb-12">
+        {/* REVIEWS */}
+        <section id="reviews" className="surface overflow-hidden mb-12">
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
             <div>
               <h3 className="text-sm font-semibold text-ink">Model reviews</h3>
@@ -270,10 +198,9 @@ export default async function Page() {
           <ReviewsTable reviews={reviews.slice(0, 50)} />
         </section>
 
-        {/* ── FOOTER ───────────────────────────────────────────────── */}
         <footer className="border-t border-border pt-6 text-xs text-muted leading-relaxed">
           <p className="max-w-3xl">
-            Paper trading on Alpaca, not financial advice. Past performance does not predict future results. The model reviews shown reflect the output of an autonomous research pipeline — every call is preserved, including the wrong ones, on purpose.
+            Paper trading on Alpaca, not financial advice. Past performance does not predict future results. Every model review and trade is preserved — including the wrong ones — on purpose.
           </p>
           <p className="mt-3 font-mono text-[10px] text-muted tracking-[0.16em]">
             © BRAHMA TRADING · BUILT IN PUBLIC
@@ -285,25 +212,16 @@ export default async function Page() {
 }
 
 function Stat({
-  label,
-  value,
-  sub,
-  tone,
-  divider,
+  label, value, sub, tone, divider,
 }: {
-  label: string;
-  value: string;
-  sub?: string;
-  tone?: "up" | "down";
-  divider?: boolean;
+  label: string; value: string; sub?: string;
+  tone?: "up" | "down"; divider?: boolean;
 }) {
   const toneClass = tone === "up" ? "text-up" : tone === "down" ? "text-down" : "text-ink";
   return (
     <div className={`px-7 py-4 ${divider ? "border-l border-border" : ""}`}>
-      <div className="font-mono text-[9px] font-semibold tracking-[0.16em] text-muted uppercase mb-2">
-        {label}
-      </div>
-      <div className={`font-mono text-lg font-semibold tracking-tight ${toneClass}`}>{value}</div>
+      <div className="font-mono text-[9px] font-semibold tracking-[0.16em] text-muted uppercase mb-2">{label}</div>
+      <div className={`font-mono text-lg font-semibold tracking-tight tabular-nums ${toneClass}`}>{value}</div>
       {sub && <div className="font-mono text-[10px] text-muted tracking-wider mt-1">{sub}</div>}
     </div>
   );
