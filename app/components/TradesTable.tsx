@@ -10,35 +10,40 @@ function fmtPct(n: number | null | undefined) {
 }
 
 export function TradesTable({ trades }: { trades: Trade[] }) {
-  if (!trades.length) return <div className="text-muted">No trades yet.</div>;
+  if (!trades.length) {
+    return <div className="text-muted text-sm py-8 text-center">No trades yet.</div>;
+  }
   return (
-    <div className="overflow-x-auto rounded border border-border">
+    <div className="overflow-x-auto">
       <table className="w-full text-sm font-mono">
-        <thead className="bg-elevated text-muted">
-          <tr>
-            <th className="text-left px-3 py-2">Symbol</th>
-            <th className="text-left px-3 py-2">Entry</th>
-            <th className="text-left px-3 py-2">Exit</th>
-            <th className="text-right px-3 py-2">Size</th>
-            <th className="text-right px-3 py-2">P&amp;L</th>
-            <th className="text-right px-3 py-2">%</th>
-            <th className="text-left px-3 py-2">Reason</th>
-            <th className="text-left px-3 py-2">Regime</th>
+        <thead>
+          <tr className="text-[10px] uppercase tracking-[0.16em] text-muted">
+            <th className="text-left px-5 py-3 font-semibold">Symbol</th>
+            <th className="text-left px-5 py-3 font-semibold">Entry</th>
+            <th className="text-left px-5 py-3 font-semibold">Exit</th>
+            <th className="text-right px-5 py-3 font-semibold">Size</th>
+            <th className="text-right px-5 py-3 font-semibold">P&amp;L</th>
+            <th className="text-right px-5 py-3 font-semibold">%</th>
+            <th className="text-left px-5 py-3 font-semibold">Reason</th>
+            <th className="text-left px-5 py-3 font-semibold">Regime</th>
           </tr>
         </thead>
         <tbody>
           {trades.map((t) => {
-            const pnlColor = (t.pnl_pct ?? 0) > 0 ? "text-green" : (t.pnl_pct ?? 0) < 0 ? "text-red" : "text-muted";
+            const pnlColor =
+              (t.pnl_pct ?? 0) > 0 ? "text-up"
+              : (t.pnl_pct ?? 0) < 0 ? "text-down"
+              : "text-mid";
             return (
-              <tr key={t.id} className="border-t border-border hover:bg-elevated">
-                <td className="px-3 py-2 font-bold">{t.symbol}</td>
-                <td className="px-3 py-2">{t.entry_date} @ {fmt$(t.entry_price)}</td>
-                <td className="px-3 py-2">{t.exit_date ? `${t.exit_date} @ ${fmt$(t.exit_price)}` : "OPEN"}</td>
-                <td className="px-3 py-2 text-right">{fmt$(t.size_usd)}</td>
-                <td className={`px-3 py-2 text-right ${pnlColor}`}>{fmt$(t.pnl_usd)}</td>
-                <td className={`px-3 py-2 text-right ${pnlColor}`}>{fmtPct(t.pnl_pct)}</td>
-                <td className="px-3 py-2 text-muted">{t.exit_reason ?? "—"}</td>
-                <td className="px-3 py-2 text-muted">{t.regime}</td>
+              <tr key={t.id} className="border-t border-border hover:bg-bg3 transition-colors">
+                <td className="px-5 py-3 font-bold text-ink">{t.symbol}</td>
+                <td className="px-5 py-3 text-mid text-xs">{t.entry_date} <span className="text-muted">@</span> {fmt$(t.entry_price)}</td>
+                <td className="px-5 py-3 text-mid text-xs">{t.exit_date ? `${t.exit_date} @ ${fmt$(t.exit_price)}` : <span className="text-gold font-semibold tracking-wider text-[10px]">OPEN</span>}</td>
+                <td className="px-5 py-3 text-right text-mid">{fmt$(t.size_usd)}</td>
+                <td className={`px-5 py-3 text-right ${pnlColor}`}>{fmt$(t.pnl_usd)}</td>
+                <td className={`px-5 py-3 text-right ${pnlColor}`}>{fmtPct(t.pnl_pct)}</td>
+                <td className="px-5 py-3 text-muted text-xs">{t.exit_reason ?? "—"}</td>
+                <td className="px-5 py-3 text-muted text-xs">{t.regime}</td>
               </tr>
             );
           })}
