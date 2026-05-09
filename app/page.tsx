@@ -111,23 +111,10 @@ export default async function Page() {
         <section className="grid lg:grid-cols-[1.55fr_1fr] gap-4 mb-4">
 
           <div className="surface surface-hover overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-              <div>
-                <h3 className="text-sm font-semibold text-ink">Performance</h3>
-                <div className="font-mono text-[10px] text-muted tracking-wider mt-1">
-                  EQUITY · USD · vs SPY BUY-AND-HOLD
-                </div>
-              </div>
-              <div className="flex gap-1 p-1 bg-bg3 border border-border rounded-lg">
-                {["1W", "1M", "3M", "YTD", "ALL"].map((tf) => (
-                  <span key={tf} className={
-                    tf === "ALL"
-                      ? "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-gold bg-bg2 rounded-md ring-1 ring-gold-mid"
-                      : "px-2.5 py-1 font-mono text-[10px] font-semibold tracking-wider text-muted"
-                  }>
-                    {tf}
-                  </span>
-                ))}
+            <div className="px-6 py-4 border-b border-border">
+              <h3 className="text-sm font-semibold text-ink">Performance</h3>
+              <div className="font-mono text-[10px] text-muted tracking-wider mt-1">
+                EQUITY · USD · vs SPY BUY-AND-HOLD
               </div>
             </div>
             <div className="px-3 py-2">
