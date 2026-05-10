@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-10T05:30:00Z",
+  "today_stories": [
+    {
+      "id": "story_2026_05_10_001",
+      "headline": "Fed signals no rate cut until Q3",
+      "explainer": "Powell said inflation is sticky and the Fed needs more evidence before cutting. Rates stay at 4.50% for at least another two meetings. Bond yields up, growth stocks slipped slightly on the news.",
+      "tickers": ["SPY", "TLT", "QQQ"],
+      "sectors": ["Financials", "Technology"],
+      "markets": ["US"],
+      "sentiment": "neutral",
+      "emoji": "🏦",
+      "source_url": "https://www.reuters.com/markets/us/fed-signals-2026-05-10/"
+    },
+    {
+      "id": "story_2026_05_10_002",
+      "headline": "NVIDIA datacentre revenue +85% — picks-and-shovels names quietly rally",
+      "explainer": "NVDA earnings confirmed AI infrastructure demand is real, but the big move came in Layer-2 names: Vertiv (cooling), Eaton (power), Vistra (utility) all up 4-9% in sympathy. Most retail saw NVDA — the layer below saw the gem.",
+      "tickers": ["NVDA", "VRT", "ETN", "VST"],
+      "sectors": ["Technology", "Industrials", "Utilities"],
+      "markets": ["US"],
+      "sentiment": "bullish",
+      "emoji": "🏗️",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-05-09/nvda-earnings-power-grid"
+    },
+    {
+      "id": "story_2026_05_10_003",
+      "headline": "China tightens rare-earth export licensing",
+      "explainer": "Beijing announced licensing requirements for processed rare-earth exports — covers neodymium, praseodymium, and dysprosium. Western producers like MP Materials (US) and Lynas (AU) saw immediate inflows. Defence supply chain is the second-order story.",
+      "tickers": ["MP", "LYC.AX", "LMT", "RTX"],
+      "sectors": ["Materials", "Industrials"],
+      "markets": ["US", "AU"],
+      "sentiment": "bullish",
+      "emoji": "⚙️",
+      "source_url": "https://www.ft.com/content/china-rare-earth-2026-05-09"
+    }
+  ],
+  "ipo_of_week": {
+    "ticker": "QNTM",
+    "name": "Quantum Logic Systems",
+    "market": "US",
+    "list_date": "2026-05-15",
+    "blurb": "Builds error-correction software for quantum computing chips. Customers include IBM and Rigetti. Expected $4B valuation; Sequoia + a16z led the last private round at $3.2B in late 2025.",
+    "hype_tags": ["quantum", "deeptech", "enterprise-saas"]
+  }
+}

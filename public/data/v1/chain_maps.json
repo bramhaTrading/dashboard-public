@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-10T05:30:00Z",
+  "today_connection_id": "ai_power_grid_2026q2",
+  "chains": [
+    {
+      "id": "ai_power_grid_2026q2",
+      "label": "AI Power Grid Buildout",
+      "explainer": "Hyperscaler datacentre demand pushing utilities + power-hardware names. NVDA earnings on May 8 confirmed datacentre revenue +85% YoY — the picks-and-shovels names supplying power, cooling, and grid capacity benefit on a 2-3 quarter lag.",
+      "heat": 92,
+      "novelty": 0.71,
+      "anchor_news_ids": ["polygon_a1b2c3", "polygon_d4e5f6", "polygon_g7h8i9"],
+      "layers": [
+        {
+          "depth": 1,
+          "label": "Compute (the obvious play)",
+          "tickers": [
+            { "ticker": "NVDA", "name": "NVIDIA",       "hidden": false, "return_7d": "+4.2%",  "rationale": "Named in 12 of 14 source headlines; earnings beat on datacentre" },
+            { "ticker": "AMD",  "name": "AMD",          "hidden": false, "return_7d": "+2.8%",  "rationale": "Named in 5 of 14 headlines; MI300 ramp" }
+          ]
+        },
+        {
+          "depth": 2,
+          "label": "Power + cooling (hidden)",
+          "tickers": [
+            { "ticker": "VRT", "name": "Vertiv",  "hidden": true, "return_7d": "+6.1%", "rationale": "Liquid-cooling supplier to NVDA — quietly up 6% on the news" },
+            { "ticker": "ETN", "name": "Eaton",   "hidden": true, "return_7d": "+3.4%", "rationale": "Datacentre power systems; quiet earnings beat May 5" }
+          ]
+        },
+        {
+          "depth": 3,
+          "label": "Utilities (deep hidden)",
+          "tickers": [
+            { "ticker": "VST", "name": "Vistra",          "hidden": true, "return_7d": "+8.7%", "rationale": "Datacentre power purchase agreements; biggest Layer-3 mover" },
+            { "ticker": "TLN", "name": "Talen Energy",    "hidden": true, "return_7d": "+5.9%", "rationale": "Direct-to-datacentre nuclear PPAs with AWS" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "weight_loss_drugs_2026q2",
+      "label": "GLP-1 Pipeline Expansion",
+      "explainer": "Eli Lilly's Mounjaro maintenance dose study at AHA conference moved sentiment. Adjacent diagnostics, manufacturing, and even consumer-discretionary names (food brands cutting portion sizes) feel the second-order impact.",
+      "heat": 78,
+      "novelty": 0.62,
+      "anchor_news_ids": ["polygon_j1k2l3", "polygon_m4n5o6"],
+      "layers": [
+        {
+          "depth": 1,
+          "label": "Drug makers (the obvious play)",
+          "tickers": [
+            { "ticker": "LLY",  "name": "Eli Lilly",   "hidden": false, "return_7d": "+3.1%", "rationale": "Mounjaro maintenance dose data positive" },
+            { "ticker": "NVO",  "name": "Novo Nordisk", "hidden": false, "return_7d": "+1.8%", "rationale": "Wegovy market share defended" }
+          ]
+        },
+        {
+          "depth": 2,
+          "label": "Supply chain (hidden)",
+          "tickers": [
+            { "ticker": "WST", "name": "West Pharma",  "hidden": true, "return_7d": "+4.0%", "rationale": "Injection device supplier to LLY + NVO" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rare_earth_export_curbs_2026q2",
+      "label": "China Rare-Earth Export Curbs",
+      "explainer": "China announced new export licensing on rare-earth refining outputs. US/AU producers + Western magnet manufacturers see policy tailwind. Defence supply chain particularly exposed.",
+      "heat": 64,
+      "novelty": 0.83,
+      "anchor_news_ids": ["polygon_p1q2r3"],
+      "layers": [
+        {
+          "depth": 1,
+          "label": "Producers (the obvious play)",
+          "tickers": [
+            { "ticker": "MP",   "name": "MP Materials", "hidden": false, "return_7d": "+11.4%", "rationale": "Largest US rare-earth miner" }
+          ]
+        },
+        {
+          "depth": 2,
+          "label": "Defence demand (hidden)",
+          "tickers": [
+            { "ticker": "LMT", "name": "Lockheed Martin", "hidden": true, "return_7d": "+0.8%", "rationale": "F-35 magnet supply pressure" },
+            { "ticker": "RTX", "name": "RTX",             "hidden": true, "return_7d": "+1.2%", "rationale": "Same exposure across Patriot + Tomahawk programs" }
+          ]
+        }
+      ]
+    }
+  ]
+}

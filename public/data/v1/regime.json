@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-10T05:30:00Z",
+  "current_state": "low_vol",
+  "state_label": "Calm",
+  "since": "2026-04-22",
+  "days_in_state": 18,
+  "mood": {
+    "tone": "calm",
+    "color": "#15803d",
+    "headline": "Markets quiet — low realised volatility, breadth healthy. The agent is patient.",
+    "macro": [
+      { "label": "VIX",       "value": "12.4",  "delta_24h": "-0.3" },
+      { "label": "T10Y2Y",    "value": "+0.42", "delta_24h": "+0.01" },
+      { "label": "HY Spread", "value": "+3.2%", "delta_24h": "0.0" }
+    ]
+  },
+  "recent_states": [
+    { "date": "2026-04-22", "state": "low_vol",  "duration_days": 18 },
+    { "date": "2026-03-15", "state": "mid_vol",  "duration_days": 38 },
+    { "date": "2026-02-01", "state": "low_vol",  "duration_days": 42 },
+    { "date": "2025-12-08", "state": "mid_vol",  "duration_days": 55 },
+    { "date": "2025-09-04", "state": "high_vol", "duration_days": 95 }
+  ]
+}
