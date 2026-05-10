@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-05-10T14:32:00Z",
+  "decodes_today": 27,
+  "filings_read_ytd": 64212,
+  "subscribers": 2148,
+  "items": [
+    { "ticker": "AAPL", "decode": "supplier guidance hides margin compression — watch SWKS, QRVO" },
+    { "ticker": "NVDA", "decode": "capex cycle bleeds into power + cooling — second-order: VRT, ETN, ANET" },
+    { "ticker": "CRWD", "decode": "ARR re-acceleration buried on page 18 of the 10-Q" },
+    { "ticker": "TSM",  "decode": "N3 yield comments quietly bullish — not in the headlines" },
+    { "ticker": "META", "decode": "ad pricing softening; cost discipline re-frames the story" },
+    { "ticker": "CRCL", "decode": "IPO chatter — pricing at the high end likely; read float carefully" },
+    { "ticker": "UBER", "decode": "advertising line item now larger than freight — repriced as a media co" }
+  ]
+}
