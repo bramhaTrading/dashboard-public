@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-10T07:41:04.798Z",
+  "events": [
+    {
+      "id": "hormuz-2026",
+      "category": "geopolitical",
+      "emoji": "⚓",
+      "time": "3h ago",
+      "severity": "high",
+      "headline": "Iran threatens Hormuz oil shipping route",
+      "context": "Iran warned it may block the world's most important oil corridor — 20% of global oil ships through here daily. Threat alone moves markets.",
+      "whyItMoves": "Oil shipping at risk → investors sell shares, rush to gold (safe haven). Defense companies rise on expected military activity.",
+      "moves": [
+        {
+          "name": "Gold",
+          "change": 2.4,
+          "reason": "Flight to safety"
+        },
+        {
+          "name": "Brent Crude",
+          "change": 3.8,
+          "reason": "Supply fear"
+        },
+        {
+          "name": "S&P 500",
+          "change": -0.9,
+          "reason": "Risk-off"
+        },
+        {
+          "name": "VIX",
+          "change": 12.3,
+          "reason": "Volatility spike"
+        }
+      ],
+      "historicalPattern": {
+        "label": "Last time this happened",
+        "detail": "June 2019 Hormuz threat — gold rose 5.2% over 2 weeks, oil 9% in 5 days."
+      },
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "energy",
+        "defense"
+      ],
+      "affectedEmojis": [
+        "🛢️",
+        "🏆",
+        "🛡️"
+      ]
+    },
+    {
+      "id": "fed-cut-2026",
+      "category": "policy",
+      "emoji": "🏦",
+      "time": "2h ago",
+      "severity": "high",
+      "headline": "Fed signals one more rate cut in December",
+      "context": "US central bank hinted it may lower interest rates one more time before year-end. Lower rates = cheaper borrowing.",
+      "whyItMoves": "Lower rates = cheaper money = companies grow faster + people spend more. Tech and growth stocks love this. Dollar weakens.",
+      "moves": [
+        {
+          "name": "Nasdaq 100",
+          "change": 1.4,
+          "reason": "Tech loves cheap money"
+        },
+        {
+          "name": "USD Index",
+          "change": -0.6,
+          "reason": "Weaker dollar"
+        },
+        {
+          "name": "Gold",
+          "change": 0.8,
+          "reason": "Weak USD lifts gold"
+        }
+      ],
+      "historicalPattern": {
+        "label": "Pattern history",
+        "detail": "Last 4 rate cuts: Nasdaq averaged +3% next month. Cuts during recessions saw stocks fall first."
+      },
+      "markets": [
+        "US"
+      ],
+      "sectors": [
+        "tech",
+        "ai",
+        "banks"
+      ],
+      "affectedEmojis": [
+        "💻",
+        "📉",
+        "🏆"
+      ]
+    },
+    {
+      "id": "nvda-2026",
+      "category": "earnings",
+      "emoji": "🚀",
+      "time": "Yesterday",
+      "severity": "medium",
+      "headline": "Nvidia smashes Q1, unveils new AI chip",
+      "context": "Nvidia, maker of chips powering most AI today, reported record sales and unveiled a faster Blackwell-2 chip.",
+      "whyItMoves": "When AI leader wins, money flows into anything AI-related. Suppliers, cloud providers, even power utilities benefit.",
+      "moves": [
+        {
+          "name": "Nvidia",
+          "change": 6.2,
+          "reason": "Beat + new chip"
+        },
+        {
+          "name": "TSMC",
+          "change": 3.1,
+          "reason": "Builds NVDA chips"
+        },
+        {
+          "name": "Constellation Energy",
+          "change": 2.4,
+          "reason": "AI = electricity"
+        },
+        {
+          "name": "AMD",
+          "change": -0.7,
+          "reason": "Loses ground to NVDA"
+        }
+      ],
+      "historicalPattern": {
+        "label": "Sector ripple",
+        "detail": "Past 6 NVDA beats: AI ETFs averaged +2.5% next day. Power utilities now 0.6 correlated to NVDA."
+      },
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "ai",
+        "tech",
+        "energy"
+      ],
+      "affectedEmojis": [
+        "🤖",
+        "💻",
+        "⚡"
+      ]
+    },
+    {
+      "id": "rba-hold-2026",
+      "category": "policy",
+      "emoji": "🏦",
+      "time": "1d ago",
+      "severity": "medium",
+      "headline": "RBA holds cash rate at 4.10%, signals data-dependent",
+      "context": "Reserve Bank of Australia kept rates unchanged. Says future moves depend on inflation and jobs data.",
+      "whyItMoves": "When rates hold, banks earn more on loans (good for AU big-4). AUD steady. Mortgage holders relieved.",
+      "moves": [
+        {
+          "name": "ASX 200",
+          "change": 0.3,
+          "reason": "Stable rates priced in"
+        },
+        {
+          "name": "CBA",
+          "change": 0.6,
+          "reason": "Banks favoured"
+        },
+        {
+          "name": "AUD/USD",
+          "change": 0.2,
+          "reason": "Currency steady"
+        }
+      ],
+      "historicalPattern": {
+        "label": "Past holds",
+        "detail": "AU big-4 banks averaged +0.8% in week after RBA holds."
+      },
+      "markets": [
+        "AU"
+      ],
+      "sectors": [
+        "banks"
+      ],
+      "affectedEmojis": [
+        "🏦",
+        "🏠",
+        "🇦🇺"
+      ]
+    },
+    {
+      "id": "iron-ore-2026",
+      "category": "macro",
+      "emoji": "⛏️",
+      "time": "5h ago",
+      "severity": "medium",
+      "headline": "Iron ore drops 4% on weak China construction data",
+      "context": "China property starts fell again — bad for iron ore demand. Australia's biggest miners feel it first.",
+      "whyItMoves": "China builds with Aussie iron ore. Less Chinese building = less iron demand = AU miners' margins shrink.",
+      "moves": [
+        {
+          "name": "BHP Group",
+          "change": -2.1,
+          "reason": "Iron ore exposure"
+        },
+        {
+          "name": "Rio Tinto",
+          "change": -1.8,
+          "reason": "Iron ore exposure"
+        },
+        {
+          "name": "Fortescue",
+          "change": -3.4,
+          "reason": "Pure-play iron"
+        },
+        {
+          "name": "ASX 200",
+          "change": -0.4,
+          "reason": "Miners weigh on index"
+        }
+      ],
+      "historicalPattern": {
+        "label": "Pattern check",
+        "detail": "Iron ore -4% days have averaged BHP -1.6% historically."
+      },
+      "markets": [
+        "AU"
+      ],
+      "sectors": [
+        "mining"
+      ],
+      "affectedEmojis": [
+        "⛏️",
+        "🇨🇳",
+        "📉"
+      ]
+    }
+  ]
+}

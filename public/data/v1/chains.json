@@ -1,0 +1,570 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-10T07:41:04.798Z",
+  "chains": [
+    {
+      "id": "ai-boom",
+      "trend": "AI Boom",
+      "emoji": "🤖",
+      "status": "growing",
+      "oneLiner": "Everyone knows NVDA. Pros own the rest of the stack.",
+      "whyItMatters": "AI is the biggest theme of the decade. The obvious play (Nvidia) has rallied 10x — but the second-order beneficiaries are still under-owned.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "ai",
+        "tech",
+        "energy"
+      ],
+      "featured": true,
+      "layers": [
+        {
+          "name": "AI product makers",
+          "why": "Headline names. Already priced for perfection.",
+          "examples": [
+            {
+              "name": "Nvidia",
+              "ticker": "NVDA"
+            },
+            {
+              "name": "Microsoft",
+              "ticker": "MSFT"
+            },
+            {
+              "name": "Alphabet",
+              "ticker": "GOOGL"
+            }
+          ]
+        },
+        {
+          "name": "Chip foundries",
+          "why": "Every AI chip in the world is fabricated by ~3 companies.",
+          "examples": [
+            {
+              "name": "TSMC",
+              "ticker": "TSM"
+            },
+            {
+              "name": "Samsung Electronics",
+              "ticker": "SSNLF"
+            }
+          ]
+        },
+        {
+          "name": "Fab equipment — picks and shovels",
+          "hidden": true,
+          "why": "Without these machines, no fab makes chips. ASML's EUV has zero competitors.",
+          "examples": [
+            {
+              "name": "ASML",
+              "ticker": "ASML"
+            },
+            {
+              "name": "Applied Materials",
+              "ticker": "AMAT"
+            },
+            {
+              "name": "Lam Research",
+              "ticker": "LRCX"
+            }
+          ]
+        },
+        {
+          "name": "Raw materials",
+          "hidden": true,
+          "why": "Silicon wafers, copper, rare earths — physical inputs to every chip.",
+          "examples": [
+            {
+              "name": "Freeport-McMoRan",
+              "ticker": "FCX",
+              "note": "Copper"
+            },
+            {
+              "name": "MP Materials",
+              "ticker": "MP",
+              "note": "Rare earths"
+            },
+            {
+              "name": "Pilbara Minerals",
+              "ticker": "PLS.AX",
+              "note": "AU lithium"
+            }
+          ]
+        },
+        {
+          "name": "Power for AI",
+          "hidden": true,
+          "why": "AI data centers need 10× more power. Utilities are quietly an AI play.",
+          "examples": [
+            {
+              "name": "Constellation Energy",
+              "ticker": "CEG"
+            },
+            {
+              "name": "Origin Energy",
+              "ticker": "ORG.AX",
+              "note": "AU power"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Buys NVDA at all-time highs after a 200% rally. Often top-ticks.",
+        "pro": "Bought ASML + copper + nuclear utilities 18 months ago."
+      }
+    },
+    {
+      "id": "ev",
+      "trend": "EV Revolution",
+      "emoji": "🔋",
+      "status": "growing",
+      "oneLiner": "The car is the headline. The battery is the moat.",
+      "whyItMatters": "EV makers fight a brutal price war. Battery, mining, charging layers have less competition and longer-tail demand.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "tech",
+        "mining",
+        "energy"
+      ],
+      "layers": [
+        {
+          "name": "EV makers",
+          "why": "Brutal price war. Hard to pick winners.",
+          "examples": [
+            {
+              "name": "Tesla",
+              "ticker": "TSLA"
+            },
+            {
+              "name": "BYD",
+              "ticker": "BYDDY"
+            }
+          ]
+        },
+        {
+          "name": "Battery makers",
+          "why": "40% of EV cost is the battery. ~5 Asian giants dominate.",
+          "examples": [
+            {
+              "name": "CATL",
+              "ticker": "300750.SZ"
+            },
+            {
+              "name": "LG Energy",
+              "ticker": "373220.KS"
+            }
+          ]
+        },
+        {
+          "name": "Battery materials",
+          "hidden": true,
+          "why": "Lithium, cobalt, nickel — supply concentrated, hard to scale fast.",
+          "examples": [
+            {
+              "name": "Albemarle",
+              "ticker": "ALB",
+              "note": "Lithium giant"
+            },
+            {
+              "name": "Pilbara Minerals",
+              "ticker": "PLS.AX",
+              "note": "AU lithium"
+            },
+            {
+              "name": "Mineral Resources",
+              "ticker": "MIN.AX",
+              "note": "AU diversified"
+            }
+          ]
+        },
+        {
+          "name": "Charging infrastructure",
+          "hidden": true,
+          "why": "EVs useless without chargers. Toll-road economics.",
+          "examples": [
+            {
+              "name": "ChargePoint",
+              "ticker": "CHPT"
+            },
+            {
+              "name": "EVgo",
+              "ticker": "EVGO"
+            }
+          ]
+        },
+        {
+          "name": "Power grid + copper",
+          "hidden": true,
+          "why": "EVs strain the grid. New transformers, more copper.",
+          "examples": [
+            {
+              "name": "Eaton",
+              "ticker": "ETN"
+            },
+            {
+              "name": "Freeport-McMoRan",
+              "ticker": "FCX"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Buys Tesla at peak hype.",
+        "pro": "Quietly accumulates lithium miners benefiting regardless of which EV wins."
+      }
+    },
+    {
+      "id": "geopolitics",
+      "trend": "Middle East Tension",
+      "emoji": "⚓",
+      "status": "event-driven",
+      "oneLiner": "When the strait shakes, gold and oil rise.",
+      "whyItMatters": "20% of global oil ships through Hormuz. Every flare-up triggers the same chain — flight to safety, energy spike, defense rallies.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "energy",
+        "defense",
+        "banks"
+      ],
+      "layers": [
+        {
+          "name": "Direct safe-havens",
+          "why": "Centuries-old behaviour. Fear up = gold up = USD up.",
+          "examples": [
+            {
+              "name": "Gold ETF",
+              "ticker": "GLD"
+            },
+            {
+              "name": "USD Index",
+              "ticker": "DXY"
+            }
+          ]
+        },
+        {
+          "name": "Energy spike",
+          "why": "Hormuz disruption = global oil shortage.",
+          "examples": [
+            {
+              "name": "Brent Crude",
+              "ticker": "BZ"
+            },
+            {
+              "name": "Exxon Mobil",
+              "ticker": "XOM"
+            },
+            {
+              "name": "Woodside Energy",
+              "ticker": "WDS.AX",
+              "note": "AU LNG"
+            }
+          ]
+        },
+        {
+          "name": "Defense ramp",
+          "hidden": true,
+          "why": "Conflict = more weapons orders. Defense budgets ratchet up.",
+          "examples": [
+            {
+              "name": "Lockheed",
+              "ticker": "LMT"
+            },
+            {
+              "name": "Raytheon",
+              "ticker": "RTX"
+            }
+          ]
+        },
+        {
+          "name": "Shipping & insurance",
+          "hidden": true,
+          "why": "Tankers reroute, insurance spikes, both lift maritime stocks.",
+          "examples": [
+            {
+              "name": "Frontline",
+              "ticker": "FRO"
+            },
+            {
+              "name": "Teekay Tankers",
+              "ticker": "TNK"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Sees war headlines, panics, sells at the bottom.",
+        "pro": "Holds permanent gold + oil allocation as 'crisis insurance.'"
+      }
+    },
+    {
+      "id": "aging",
+      "trend": "Aging Population",
+      "emoji": "👴",
+      "status": "mature",
+      "oneLiner": "The most predictable demographic shift in history.",
+      "whyItMatters": "By 2030, 1 in 5 Americans will be 65+. Healthcare spend, retirement income demand, senior housing all surge. Trend doesn't care about recessions.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "health",
+        "property"
+      ],
+      "layers": [
+        {
+          "name": "Big pharma",
+          "why": "Older population = more meds.",
+          "examples": [
+            {
+              "name": "Eli Lilly",
+              "ticker": "LLY"
+            },
+            {
+              "name": "Pfizer",
+              "ticker": "PFE"
+            },
+            {
+              "name": "CSL Limited",
+              "ticker": "CSL.AX",
+              "note": "AU pharma"
+            }
+          ]
+        },
+        {
+          "name": "Hospitals & insurers",
+          "why": "Per-person healthcare spend doubles past 65.",
+          "examples": [
+            {
+              "name": "UnitedHealth",
+              "ticker": "UNH"
+            },
+            {
+              "name": "Ramsay Health",
+              "ticker": "RHC.AX",
+              "note": "AU hospitals"
+            }
+          ]
+        },
+        {
+          "name": "Medical devices",
+          "hidden": true,
+          "why": "Hip replacements, hearing aids, glucose monitors. Recurring revenue.",
+          "examples": [
+            {
+              "name": "Stryker",
+              "ticker": "SYK"
+            },
+            {
+              "name": "Cochlear",
+              "ticker": "COH.AX",
+              "note": "AU hearing implants"
+            },
+            {
+              "name": "ResMed",
+              "ticker": "RMD.AX",
+              "note": "AU sleep apnea"
+            }
+          ]
+        },
+        {
+          "name": "Senior REITs",
+          "hidden": true,
+          "why": "Assisted living. Demand growing, supply constrained.",
+          "examples": [
+            {
+              "name": "Welltower",
+              "ticker": "WELL"
+            },
+            {
+              "name": "Ventas",
+              "ticker": "VTR"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Chases pharma during scares. Misses the 30-year compound.",
+        "pro": "Holds healthcare ETF + senior REITs as multi-decade hold."
+      }
+    },
+    {
+      "id": "climate",
+      "trend": "Climate / Renewables",
+      "emoji": "☀️",
+      "status": "growing",
+      "oneLiner": "Solar panels are obvious. The grid behind them isn't.",
+      "whyItMatters": "$5T global investment going into clean energy this decade. Pros own the boring grid + materials layer where margins are protected.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "energy",
+        "mining"
+      ],
+      "layers": [
+        {
+          "name": "Solar/wind makers",
+          "why": "Panel prices fall yearly. Brutal Chinese competition.",
+          "examples": [
+            {
+              "name": "First Solar",
+              "ticker": "FSLR"
+            },
+            {
+              "name": "Enphase",
+              "ticker": "ENPH"
+            }
+          ]
+        },
+        {
+          "name": "Grid build-out",
+          "hidden": true,
+          "why": "Renewables need new transmission, smart meters, storage.",
+          "examples": [
+            {
+              "name": "Quanta Services",
+              "ticker": "PWR"
+            },
+            {
+              "name": "Eaton",
+              "ticker": "ETN"
+            }
+          ]
+        },
+        {
+          "name": "Critical materials",
+          "hidden": true,
+          "why": "Polysilicon for solar, rare earths for wind, copper for grids.",
+          "examples": [
+            {
+              "name": "Freeport-McMoRan",
+              "ticker": "FCX"
+            },
+            {
+              "name": "Lynas Rare Earths",
+              "ticker": "LYC.AX",
+              "note": "AU rare earths"
+            }
+          ]
+        },
+        {
+          "name": "Nuclear renaissance",
+          "hidden": true,
+          "why": "AI data centers reviving nuclear. Backed by MSFT, AMZN.",
+          "examples": [
+            {
+              "name": "Cameco",
+              "ticker": "CCJ",
+              "note": "Uranium"
+            },
+            {
+              "name": "Constellation",
+              "ticker": "CEG"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Buys solar ETFs at peak, gets crushed in panel-price crashes.",
+        "pro": "Owns grid contractors + uranium + copper as transition picks-and-shovels."
+      }
+    },
+    {
+      "id": "data-centers",
+      "trend": "Data Center Build-out",
+      "emoji": "🏗️",
+      "status": "early",
+      "oneLiner": "AI hype is loud. The buildings storing AI are quiet.",
+      "whyItMatters": "Every AI model runs in a data center. Demand growing 30%/year. Construction, cooling, networking, real estate around centers — less crowded than NVDA.",
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectors": [
+        "tech",
+        "ai",
+        "property"
+      ],
+      "layers": [
+        {
+          "name": "Hyperscalers",
+          "why": "MSFT, AMZN, GOOGL spending $250B/year combined.",
+          "examples": [
+            {
+              "name": "Microsoft",
+              "ticker": "MSFT"
+            },
+            {
+              "name": "Amazon",
+              "ticker": "AMZN"
+            }
+          ]
+        },
+        {
+          "name": "Data center REITs",
+          "hidden": true,
+          "why": "Own the actual buildings. Long lease contracts, recurring rent.",
+          "examples": [
+            {
+              "name": "Equinix",
+              "ticker": "EQIX"
+            },
+            {
+              "name": "Digital Realty",
+              "ticker": "DLR"
+            },
+            {
+              "name": "NEXTDC",
+              "ticker": "NXT.AX",
+              "note": "AU data centers"
+            }
+          ]
+        },
+        {
+          "name": "Cooling + power gear",
+          "hidden": true,
+          "why": "AI chips run hot. Liquid cooling now standard.",
+          "examples": [
+            {
+              "name": "Vertiv",
+              "ticker": "VRT"
+            },
+            {
+              "name": "Eaton",
+              "ticker": "ETN"
+            }
+          ]
+        },
+        {
+          "name": "Power generation",
+          "hidden": true,
+          "why": "Single AI data center = power of a small city.",
+          "examples": [
+            {
+              "name": "Constellation",
+              "ticker": "CEG"
+            },
+            {
+              "name": "Vistra",
+              "ticker": "VST"
+            }
+          ]
+        }
+      ],
+      "retailVsPro": {
+        "retail": "Buys NVDA, calls it 'AI play,' done.",
+        "pro": "Owns Equinix + Vertiv + utility — captures AI demand at every layer."
+      }
+    }
+  ]
+}

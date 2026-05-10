@@ -1,0 +1,110 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-10T07:41:04.798Z",
+  "news": [
+    {
+      "id": "fed-1",
+      "source": "Reuters",
+      "time": "12 min ago",
+      "headline": "Fed signals one more rate cut likely before end of year",
+      "summary": "US central bank may lower rates one more time in 2026. Lower rates = cheaper borrowing, can lift stocks.",
+      "sentiment": "positive",
+      "impact": "high",
+      "tags": [
+        "fed",
+        "rates"
+      ],
+      "markets": [
+        "US"
+      ],
+      "sectorId": "banks"
+    },
+    {
+      "id": "nvda-1",
+      "source": "Bloomberg",
+      "time": "47 min ago",
+      "headline": "Nvidia announces new AI chip, beats Q1 earnings",
+      "summary": "New chip faster than last gen. Earnings beat expectations. Stock rose 6% after-hours.",
+      "sentiment": "positive",
+      "impact": "high",
+      "tags": [
+        "nvda",
+        "ai"
+      ],
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectorId": "ai"
+    },
+    {
+      "id": "asx-1",
+      "source": "AFR",
+      "time": "2h ago",
+      "headline": "ASX 200 finishes flat as miners drag, banks gain",
+      "summary": "Australia's index ended unchanged. Mining fell on weak iron ore; banks offset losses.",
+      "sentiment": "neutral",
+      "impact": "medium",
+      "tags": [
+        "asx",
+        "miners"
+      ],
+      "markets": [
+        "AU"
+      ],
+      "sectorId": "mining"
+    },
+    {
+      "id": "oil-1",
+      "source": "CNBC",
+      "time": "3h ago",
+      "headline": "Oil drops below $70 on softening demand outlook",
+      "summary": "Oil fell as analysts warned global demand may slow. Cheaper petrol but hurts energy companies.",
+      "sentiment": "negative",
+      "impact": "medium",
+      "tags": [
+        "oil",
+        "energy"
+      ],
+      "markets": [
+        "US",
+        "AU"
+      ],
+      "sectorId": "energy"
+    },
+    {
+      "id": "rba-1",
+      "source": "ABC News",
+      "time": "1d ago",
+      "headline": "RBA leaves cash rate unchanged at 4.10%",
+      "summary": "Aussie central bank held rates. Signals it's watching inflation data closely.",
+      "sentiment": "neutral",
+      "impact": "high",
+      "tags": [
+        "rba",
+        "rates"
+      ],
+      "markets": [
+        "AU"
+      ],
+      "sectorId": "banks"
+    },
+    {
+      "id": "bhp-1",
+      "source": "AFR",
+      "time": "5h ago",
+      "headline": "BHP slips as iron ore drops on weak China data",
+      "summary": "Iron ore -4% on weak Chinese construction. Australia's biggest miner felt the hit.",
+      "sentiment": "negative",
+      "impact": "medium",
+      "tags": [
+        "bhp",
+        "china"
+      ],
+      "markets": [
+        "AU"
+      ],
+      "sectorId": "mining"
+    }
+  ]
+}

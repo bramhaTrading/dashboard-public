@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.0.0",
-  "generated_at": "2026-05-10T05:30:00Z",
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-10T07:00:00Z",
   "current_state": "low_vol",
   "state_label": "Calm",
   "since": "2026-04-22",
@@ -15,11 +15,27 @@
       { "label": "HY Spread", "value": "+3.2%", "delta_24h": "0.0" }
     ]
   },
+  "by_market": {
+    "US": {
+      "index_value":  "5,847.21",
+      "index_change": 0.42,
+      "spark":        [5810, 5820, 5805, 5815, 5830, 5825, 5835, 5840, 5847],
+      "top_sector":   { "name": "Energy", "emoji": "🛢️", "change": 2.1 },
+      "mood":         { "label": "Calm",  "emoji": "🟢", "tone": "good" },
+      "vix_label":    "VIX 14.7"
+    },
+    "AU": {
+      "index_value":  "8,392.50",
+      "index_change": -0.08,
+      "spark":        [8410, 8398, 8405, 8400, 8395, 8392, 8390, 8388, 8392],
+      "top_sector":   { "name": "Mining", "emoji": "⛏️", "change": 1.4 },
+      "mood":         { "label": "Mixed", "emoji": "🟡", "tone": "warn" },
+      "vix_label":    "VIX 16.2"
+    }
+  },
   "recent_states": [
     { "date": "2026-04-22", "state": "low_vol",  "duration_days": 18 },
     { "date": "2026-03-15", "state": "mid_vol",  "duration_days": 38 },
-    { "date": "2026-02-01", "state": "low_vol",  "duration_days": 42 },
-    { "date": "2025-12-08", "state": "mid_vol",  "duration_days": 55 },
-    { "date": "2025-09-04", "state": "high_vol", "duration_days": 95 }
+    { "date": "2026-02-01", "state": "low_vol",  "duration_days": 42 }
   ]
 }

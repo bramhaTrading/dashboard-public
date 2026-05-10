@@ -1,0 +1,68 @@
+{
+  "schema_version": "2.0.0",
+  "generated_at": "2026-05-10T07:41:04.798Z",
+  "ipos": [
+    {
+      "id": "stripe",
+      "name": "Stripe Inc.",
+      "ticker": "STRP",
+      "market": "US",
+      "listingDate": "Jun 12, 2026",
+      "priceRange": "$95–110",
+      "sector": "Fintech",
+      "sectorId": "tech",
+      "blurb": "Runs payment plumbing for online stores. When you buy online, Stripe likely handled it.",
+      "hype": "high",
+      "featured": true
+    },
+    {
+      "id": "databricks",
+      "name": "Databricks",
+      "ticker": "DBRX",
+      "market": "US",
+      "listingDate": "Jun 25, 2026",
+      "priceRange": "$120–140",
+      "sector": "AI / Data",
+      "sectorId": "ai",
+      "blurb": "Helps big companies store data and build AI on top. Warehouse for the AI age.",
+      "hype": "high"
+    },
+    {
+      "id": "canva",
+      "name": "Canva Pty Ltd",
+      "ticker": "CNVA",
+      "market": "AU",
+      "listingDate": "Jul 03, 2026",
+      "priceRange": "A$42–48",
+      "sector": "Software",
+      "sectorId": "tech",
+      "blurb": "Design tool for posters, posts, slide decks. Used by 200M+ people. No Photoshop skills needed.",
+      "hype": "high",
+      "featured": true
+    },
+    {
+      "id": "lendi",
+      "name": "Lendi Group",
+      "ticker": "LDI",
+      "market": "AU",
+      "listingDate": "Jul 18, 2026",
+      "priceRange": "A$2.40–2.85",
+      "sector": "Lending",
+      "sectorId": "banks",
+      "blurb": "Compares home loans across Aussie banks. Like Trivago, but for mortgages.",
+      "hype": "low"
+    },
+    {
+      "id": "neuro-aus",
+      "name": "NeuroBio Australia",
+      "ticker": "NBA",
+      "market": "AU",
+      "listingDate": "Jul 24, 2026",
+      "priceRange": "A$3.00–3.50",
+      "sector": "Biotech",
+      "sectorId": "health",
+      "blurb": "Aussie biotech researching Alzheimer's drug. Phase 2 trials running.",
+      "hype": "med"
+    }
+  ]
+}
