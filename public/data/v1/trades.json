@@ -1,5 +1,47 @@
 [
   {
+    "id": "t52",
+    "symbol": "NI",
+    "action": "BUY",
+    "entry_date": "2026-05-21",
+    "entry_price": 47.33,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 7356.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
+    "id": "t51",
+    "symbol": "MS",
+    "action": "BUY",
+    "entry_date": "2026-05-21",
+    "entry_price": 197.1782,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 11345.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
+    "id": "t50",
+    "symbol": "MSFT",
+    "action": "BUY",
+    "entry_date": "2026-05-20",
+    "entry_price": 414.4402,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 14592.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t49",
     "symbol": "ALL",
     "action": "BUY",

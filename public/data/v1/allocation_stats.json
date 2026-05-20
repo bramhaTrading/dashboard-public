@@ -1,13 +1,13 @@
 {
   "top_sector": "Consumer Defensive",
-  "top_sector_pct": 0.3424,
-  "top3_share": 0.6565,
+  "top_sector_pct": 0.3164,
+  "top3_share": 0.6658,
   "sectors_held": 9,
   "gics_total": 11,
-  "hhi": 0.1907,
+  "hhi": 0.1828,
   "top_position": {
     "symbol": "WMT",
-    "pct_of_book": 0.2571
+    "pct_of_book": 0.2376
   },
   "missing_sectors": [
     "Communication Services",
