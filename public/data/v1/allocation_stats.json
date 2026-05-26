@@ -1,13 +1,13 @@
 {
   "top_sector": "Consumer Defensive",
-  "top_sector_pct": 0.2529,
-  "top3_share": 0.5872,
-  "sectors_held": 11,
+  "top_sector_pct": 0.2463,
+  "top3_share": 0.5719,
+  "sectors_held": 12,
   "gics_total": 11,
-  "hhi": 0.1535,
+  "hhi": 0.1486,
   "top_position": {
     "symbol": "WMT",
-    "pct_of_book": 0.1537
+    "pct_of_book": 0.1497
   },
   "missing_sectors": []
 }
