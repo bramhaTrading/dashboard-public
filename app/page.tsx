@@ -36,6 +36,11 @@ function splitDollars(n: number) {
   return { whole: formatted, cents };
 }
 
+// Revalidate the rendered HTML every 60s. Without this the page is SSG and
+// embeds stale data even after data/*.json files are updated; users see
+// pre-build numbers no matter how fresh the JSON endpoints are.
+export const revalidate = 60;
+
 export default async function Page() {
   const meta     = await loadJson<Meta | null>("meta.json", null);
   const equity   = await loadJson<EquityPoint[]>("equity_curve.json", []);
