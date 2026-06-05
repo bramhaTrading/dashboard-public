@@ -1,13 +1,13 @@
 {
   "top_sector": "Industrials",
-  "top_sector_pct": 0.2062,
-  "top3_share": 0.5464,
+  "top_sector_pct": 0.2006,
+  "top3_share": 0.5434,
   "sectors_held": 12,
   "gics_total": 11,
-  "hhi": 0.1427,
+  "hhi": 0.142,
   "top_position": {
     "symbol": "WMT",
-    "pct_of_book": 0.0707
+    "pct_of_book": 0.0688
   },
   "missing_sectors": []
 }
