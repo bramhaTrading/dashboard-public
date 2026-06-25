@@ -1,13 +1,13 @@
 {
   "top_sector": "Financial Services",
-  "top_sector_pct": 0.1928,
-  "top3_share": 0.5254,
+  "top_sector_pct": 0.193,
+  "top3_share": 0.5257,
   "sectors_held": 12,
   "gics_total": 11,
   "hhi": 0.1339,
   "top_position": {
     "symbol": "WMT",
-    "pct_of_book": 0.0488
+    "pct_of_book": 0.046
   },
   "missing_sectors": []
 }
