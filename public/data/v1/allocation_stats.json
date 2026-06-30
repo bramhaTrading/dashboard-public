@@ -1,13 +1,13 @@
 {
   "top_sector": "Financial Services",
-  "top_sector_pct": 0.1955,
-  "top3_share": 0.4958,
+  "top_sector_pct": 0.1909,
+  "top3_share": 0.4895,
   "sectors_held": 12,
   "gics_total": 11,
-  "hhi": 0.1279,
+  "hhi": 0.126,
   "top_position": {
     "symbol": "KMI",
-    "pct_of_book": 0.0421
+    "pct_of_book": 0.0412
   },
   "missing_sectors": []
 }
