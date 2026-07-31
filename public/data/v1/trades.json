@@ -1,5 +1,33 @@
 [
   {
+    "id": "t325",
+    "symbol": "AMZN",
+    "action": "BUY",
+    "entry_date": "2026-08-01",
+    "entry_price": 271.3905,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 5451.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
+    "id": "t324",
+    "symbol": "KKR",
+    "action": "BUY",
+    "entry_date": "2026-08-01",
+    "entry_price": 101.0506,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 9582.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t323",
     "symbol": "GOOG",
     "action": "BUY",
