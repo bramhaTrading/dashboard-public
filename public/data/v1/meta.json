@@ -1,13 +1,13 @@
 {
-  "last_updated": "2026-08-10T22:00:02Z",
+  "last_updated": "2026-08-11T22:00:01Z",
   "starting_capital": 100000.0,
-  "current_equity": 111835.35,
-  "total_return_pct": 0.118354,
-  "spy_return_pct": 0.178903,
-  "alpha_pct": -0.06055,
-  "sharpe": 2.1422,
+  "current_equity": 113279.76,
+  "total_return_pct": 0.132798,
+  "spy_return_pct": 0.174878,
+  "alpha_pct": -0.04208,
+  "sharpe": 2.1305,
   "max_drawdown_pct": -0.047111,
-  "trade_count": 330,
+  "trade_count": 331,
   "win_rate": 1.0,
   "regime": "mid_vol"
 }
