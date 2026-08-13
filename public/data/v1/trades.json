@@ -1,5 +1,19 @@
 [
   {
+    "id": "t332",
+    "symbol": "NVDA",
+    "action": "BUY",
+    "entry_date": "2026-08-14",
+    "entry_price": null,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 13056.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t331",
     "symbol": "BA",
     "action": "BUY",
