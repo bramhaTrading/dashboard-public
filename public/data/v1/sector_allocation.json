@@ -2,61 +2,61 @@
   {
     "sector": "Financial Services",
     "value_usd": 541547.0,
-    "pct": 0.1962
+    "pct": 0.1953
   },
   {
     "sector": "Industrials",
     "value_usd": 450354.65,
-    "pct": 0.1631
+    "pct": 0.1624
   },
   {
     "sector": "Technology",
     "value_usd": 392749.0,
-    "pct": 0.1423
+    "pct": 0.1416
   },
   {
     "sector": "Healthcare",
-    "value_usd": 364691.0,
-    "pct": 0.1321
+    "value_usd": 376755.0,
+    "pct": 0.1359
   },
   {
     "sector": "Consumer Defensive",
     "value_usd": 298305.0,
-    "pct": 0.1081
+    "pct": 0.1076
   },
   {
     "sector": "Energy",
     "value_usd": 216945.0,
-    "pct": 0.0786
+    "pct": 0.0782
   },
   {
     "sector": "Consumer Cyclical",
     "value_usd": 185856.0,
-    "pct": 0.0673
+    "pct": 0.067
   },
   {
     "sector": "Basic Materials",
     "value_usd": 90935.0,
-    "pct": 0.0329
+    "pct": 0.0328
   },
   {
     "sector": "Communication Services",
     "value_usd": 64816.0,
-    "pct": 0.0235
+    "pct": 0.0234
   },
   {
     "sector": "Utilities",
     "value_usd": 60363.0,
-    "pct": 0.0219
+    "pct": 0.0218
   },
   {
     "sector": "Unknown",
     "value_usd": 52221.0,
-    "pct": 0.0189
+    "pct": 0.0188
   },
   {
     "sector": "Real Estate",
     "value_usd": 41885.0,
-    "pct": 0.0152
+    "pct": 0.0151
   }
 ]

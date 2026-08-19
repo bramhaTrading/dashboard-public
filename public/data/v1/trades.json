@@ -1,5 +1,19 @@
 [
   {
+    "id": "t336",
+    "symbol": "LLY",
+    "action": "BUY",
+    "entry_date": "2026-08-20",
+    "entry_price": null,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 12064.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t335",
     "symbol": "C",
     "action": "BUY",
