@@ -1,5 +1,19 @@
 [
   {
+    "id": "t337",
+    "symbol": "UBER",
+    "action": "BUY",
+    "entry_date": "2026-08-27",
+    "entry_price": null,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 6148.53,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t336",
     "symbol": "LLY",
     "action": "BUY",
