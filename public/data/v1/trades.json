@@ -1,5 +1,47 @@
 [
   {
+    "id": "t340",
+    "symbol": "NVDA",
+    "action": "BUY",
+    "entry_date": "2026-09-05",
+    "entry_price": null,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 5392.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
+    "id": "t339",
+    "symbol": "WM",
+    "action": "BUY",
+    "entry_date": "2026-09-05",
+    "entry_price": 219.21,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 5405.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
+    "id": "t338",
+    "symbol": "MCD",
+    "action": "BUY",
+    "entry_date": "2026-09-05",
+    "entry_price": 256.883,
+    "exit_date": null,
+    "exit_price": null,
+    "size_usd": 10695.0,
+    "pnl_usd": null,
+    "pnl_pct": null,
+    "exit_reason": null,
+    "regime": "mid_vol"
+  },
+  {
     "id": "t337",
     "symbol": "UBER",
     "action": "BUY",
